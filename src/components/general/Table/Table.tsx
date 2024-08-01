@@ -37,7 +37,7 @@ export const Table = <T,>({
   });
 
   return (
-    <table className="w-full max-w-[905px] rounded-sm overflow-hidden shadow-normal text-sm leading-[24px]">
+    <table className="w-full rounded-sm overflow-hidden shadow-normal text-sm leading-[24px]">
       <thead className="bg-primaryLight text-textInverted text-left">
         {table.getHeaderGroups().map((group) => (
           <tr className="text-textInverted" key={group.id}>

@@ -100,7 +100,7 @@ export const ContactListPage = () => {
         </ContentLayout>
       </ActionLayout>
       <ContentLayout>
-        <div className="flex gap-[18px] items-start">
+        <div className="flex gap-[18px] items-start max-w-[1253px]">
           <ContactListTable
             contacts={filteredData}
             onRowClick={({ id }) => updateParams({ id })}
