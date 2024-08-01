@@ -17,8 +17,14 @@ const columnHelper = createColumnHelper<Contact>();
 export const ContactListTable = ({ contacts, onRowClick }: Props) => {
   const { t } = useTranslation();
 
-  const columns = useMemo(
-    () => [
+  const columns = useMemo(() => {
+    const getActiveIcon = (fill: string) => (
+      <div className="inline-block align-middle">
+        <EyeIcon fill={fill} />
+      </div>
+    );
+
+    return [
       columnHelper.accessor("name", {
         header: t("contact.name"),
         cell: ({ row }) => formatName(row.original.name, row.original.surname),
@@ -28,11 +34,12 @@ export const ContactListTable = ({ contacts, onRowClick }: Props) => {
         cell: (context) => context.getValue(),
       }),
       columnHelper.accessor("isActive", {
-        header: () => <EyeIcon fill={theme.colors.textInverted} />,
+        header: () => getActiveIcon(theme.colors.textInverted),
         cell: (context) =>
-          context.getValue() ? <EyeIcon fill={theme.colors.textLight} /> : "",
+          context.getValue() ? getActiveIcon(theme.colors.textLight) : "",
         enableSorting: false,
         enableHiding: false,
+        meta: { align: "center" },
       }),
       columnHelper.accessor("email", {
         header: () => t("contact.email"),
@@ -45,9 +52,8 @@ export const ContactListTable = ({ contacts, onRowClick }: Props) => {
         enableSorting: false,
         meta: { align: "right" },
       }),
-    ],
-    [t],
-  );
+    ];
+  }, [t]);
 
   return (
     <Table

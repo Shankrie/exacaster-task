@@ -2,13 +2,13 @@ import { ReactNode } from "react";
 
 type Props = {
   children?: ReactNode;
-  align?: "left" | "right";
+  align?: "left" | "center" | "right";
 };
 
 export const TableCell = ({ children, align }: Props) => {
   return (
     <td
-      className={`relative p-[16px] ${align === "right" ? "text-right pr-0" : ""}`}
+      className={`relative p-[16px] ${align === "right" ? "text-right pr-0" : ""} ${align === "center" ? "text-center" : ""}`}
     >
       {children}
       {align !== "right" && (
