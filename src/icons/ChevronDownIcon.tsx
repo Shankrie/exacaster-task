@@ -1,0 +1,18 @@
+type Props = {
+  fill?: string;
+};
+
+export const ChevronDownIcon = ({ fill }: Props) => {
+  return (
+    <svg
+      width="10"
+      height="6"
+      viewBox="0 0 10 6"
+      fill={fill ?? "#000000"}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M0 0.5L5 5.5L10 0.5H0Z" fill="#FDFCFF" />
+      <path d="M0 0.5L5 5.5L10 0.5H0Z" fill="#0060A8" fill-opacity="0.05" />
+    </svg>
+  );
+};
