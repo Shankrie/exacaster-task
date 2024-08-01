@@ -4,4 +4,5 @@ export default {
   email: "Email",
   phone: "Phone",
   showActive: "Show active",
+  photo: "Contact photo",
 };

@@ -3,6 +3,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { MenuIcon } from "@icons/MenuIcon";
 import { theme } from "@themes/themeConfig";
 import { ReactNode } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 
 type TableMenuItem = {
   id: string;
@@ -16,11 +17,16 @@ type Props = {
 };
 
 export const TableColumnVisibilityMenu = ({ items }: Props) => {
+  const { t } = useTranslation();
+
   const { primaryMedium, textInverted } = theme.colors;
 
   return (
     <Menu>
-      <MenuButton className="inline-flex items-center justify-center size-[56px] data-[active]:bg-white">
+      <MenuButton
+        className="inline-flex items-center justify-center size-[56px] data-[active]:bg-white"
+        title={t("general.selectVisibleColumns")}
+      >
         {({ active }) => (
           <MenuIcon fill={active ? primaryMedium : textInverted} />
         )}

@@ -1,4 +1,4 @@
-import { Field, Select as HeadlessSelect } from "@headlessui/react";
+import { Field, Select as HeadlessSelect, Label } from "@headlessui/react";
 import { ChangeEvent } from "react";
 
 type Props = {
@@ -12,9 +12,9 @@ export const Select = ({ label, value, options, onChange }: Props) => {
   return (
     <Field>
       {label && (
-        <div className="absolute text-xs translate-y-[-50%] px-[4px] ml-[12px] bg-primaryMedium">
+        <Label className="absolute text-xs translate-y-[-50%] px-[4px] ml-[12px] bg-primaryMedium">
           {label}
-        </div>
+        </Label>
       )}
 
       <HeadlessSelect

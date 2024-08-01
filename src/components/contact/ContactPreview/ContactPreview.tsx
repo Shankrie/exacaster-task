@@ -26,7 +26,11 @@ export const ContactPreview = ({ id }: Props) => {
 
   return (
     <div className="w-full max-w-[330px] bg-white shadow-normal rounded-sm overflow-hidden">
-      <img className="w-full" src={contactPaceholderUrl} />
+      <img
+        className="w-full"
+        src={contactPaceholderUrl}
+        alt={t("contact.photo")}
+      />
       <div className="flex flex-col gap-[16px] p-[16px] text-center">
         <div className="text-lg leading-[32px] text-text">
           {formatName(contact.name, contact.surname)}
